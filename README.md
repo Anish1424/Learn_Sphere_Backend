@@ -1,38 +1,59 @@
-📘 LearnSphere – Frontend (React.js)
+⚙️ LearnSphere – Backend (Spring Boot + MySQL)
 
-A modern React.js frontend for LearnSphere, an online learning platform similar to Udemy. The frontend delivers an intuitive interface for students and instructors to browse, enroll, and manage courses.
+The Spring Boot backend service for LearnSphere, handling authentication, course management, payments, and user progress tracking. It exposes REST APIs consumed by the React frontend.
 
 ✨ Features
 
-🎓 Browse courses by category, popularity, or rating
+🔐 User Authentication & Authorization (JWT)
 
-🔍 Advanced search with filters
+👨‍🏫 Instructor APIs to create/manage courses
 
-👨‍🏫 Instructor dashboard for uploading & managing courses
+🎓 Student APIs for enrollment & progress
 
-📚 Student dashboard for enrollment & progress tracking
+💳 Payment API integration
 
-💳 Integrated payment UI for course purchases
+📊 Admin APIs for reports & analytics
 
-📱 Fully responsive (desktop & mobile)
+🗄️ MySQL database integration
 
 🛠 Tech Stack
 
-Framework: React.js
+Backend Framework: Spring Boot
 
-UI Library: Tailwind CSS / Material UI
+Database: MySQL
 
-State Management: Redux Toolkit
+ORM: Hibernate / JPA
 
-API Integration: Axios (connected to Spring Boot backend)
+Security: Spring Security + JWT
+
+Build Tool: Maven
+
+API: RESTful
 
 ⚙️ Installation & Setup
-git clone https://github.com/Anish1424/learnsphere-frontend.git
-cd learnsphere-frontend
-npm install
-npm start
+git clone https://github.com/Anish1424/learnsphere-backend.git
+cd learnsphere-backend
+mvn clean install
 
 
-Runs on: http://localhost:3000
+Create a MySQL database:
 
-Make sure the backend server (Spring Boot) is running before using the app.
+CREATE DATABASE learnsphere;
+
+
+Update application.properties with your DB credentials:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/learnsphere
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+jwt.secret=your-secret-key
+
+
+Run the backend:
+
+mvn spring-boot:run
+
+
+Backend will run on: http://localhost:8080
